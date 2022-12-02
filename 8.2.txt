@@ -1,0 +1,16 @@
+#include <string>
+#include <iostream>
+using namespace std;
+void Del(string str)
+{
+    size_t i1 = str.find_first_of('(');
+    size_t i2 = str.find_last_of(')');
+    str.erase(i1, i2 + 1 - i1);
+    cout << str << endl;
+}
+int main()
+{
+    string str = "Hello, how are you?(-( I'm )not) fine.";
+    cout << str << endl;
+    Del(str);
+}
